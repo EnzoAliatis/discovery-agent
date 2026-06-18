@@ -1,2 +1,2 @@
 # discovery-agent
-Our first discovery agent a mvp with AI
+Our first discovery agent to generate a mvp with AI

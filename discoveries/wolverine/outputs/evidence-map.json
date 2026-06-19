@@ -1,0 +1,76 @@
+{
+  "personas": [
+    {
+      "name": "D. (dueño de bar)",
+      "role": "dueño de bar",
+      "primary": true
+    },
+    {
+      "name": "D. (dueña de spa)",
+      "role": "dueña de spa",
+      "primary": true
+    },
+    {
+      "name": "T. (técnico de limpieza de piscinas)",
+      "role": "técnico de limpieza de piscinas",
+      "primary": true
+    },
+    {
+      "name": "Cliente final",
+      "role": "cliente",
+      "primary": false
+    }
+  ],
+  "pains": [
+    {
+      "id": "multi-canal-reservas",
+      "source": "dueno-bar.md",
+      "persona": "D. (dueño de bar)"
+    },
+    {
+      "id": "dobles-reservas-bar",
+      "source": "dueno-bar.md",
+      "persona": "D. (dueño de bar)"
+    },
+    {
+      "id": "grupos-sin-lugar",
+      "source": "dueno-bar.md",
+      "persona": "D. (dueño de bar)"
+    },
+    {
+      "id": "calculo-duracion-servicios",
+      "source": "dueno-spa.md",
+      "persona": "D. (dueña de spa)"
+    },
+    {
+      "id": "retrasos-encadenados",
+      "source": "dueno-spa.md",
+      "persona": "D. (dueña de spa)"
+    },
+    {
+      "id": "sobreposicion-citas-spa",
+      "source": "dueno-spa.md",
+      "persona": "D. (dueña de spa)"
+    },
+    {
+      "id": "no-shows",
+      "source": "dueno-spa.md",
+      "persona": "D. (dueña de spa)"
+    },
+    {
+      "id": "agenda-dispersa",
+      "source": "tecnico-piscinas.md",
+      "persona": "T. (técnico de limpieza de piscinas)"
+    },
+    {
+      "id": "cambios-ultimo-momento",
+      "source": "tecnico-piscinas.md",
+      "persona": "T. (técnico de limpieza de piscinas)"
+    },
+    {
+      "id": "tiempo-perdido-organizando",
+      "source": "tecnico-piscinas.md",
+      "persona": "T. (técnico de limpieza de piscinas)"
+    }
+  ]
+}

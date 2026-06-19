@@ -1,0 +1,34 @@
+{
+  "hypotheses": [
+    {
+      "id": "H-01",
+      "risk": "alto",
+      "assumption": "Los clientes de los negocios piloto adoptarán el canal de reserva en línea en lugar de WhatsApp o llamadas, sin necesitar intermediación del dueño.",
+      "hypothesis": "Creemos que los clientes existentes realizarán su próxima reserva de forma autónoma por el sistema si el acceso al formulario es visible y el proceso toma menos de 3 minutos, porque el canal es más conveniente que esperar respuesta por WhatsApp.",
+      "metric": "Porcentaje de reservas que ingresan por el sistema versus por canales informales (WhatsApp, llamada) durante los primeros 30 días piloto.",
+      "threshold": "≥ 50% de las reservas entran por el sistema en los primeros 30 días de operación piloto.",
+      "experiment": "Fake door + Mago de Oz: publicar un formulario de reserva (Google Forms) enlazado desde el perfil de WhatsApp/Instagram del negocio. El dueño procesa las reservas manualmente detrás de bambalinas. Caja de tiempo: 2 semanas. Costo: ≈ 0.",
+      "decision": "Si pasa (≥ 50% por el sistema) → construir el sistema completo con bloqueo automático. Si falla (< 50%) → investigar barreras (fricción del formulario, desconfianza, desconocimiento del canal) y pivotar el flujo antes de invertir en desarrollo."
+    },
+    {
+      "id": "H-02",
+      "risk": "alto",
+      "assumption": "Los dueños de negocio están dispuestos a configurar el sistema con su oferta de servicios y a dejar de aceptar reservas por canales informales, cambiando un hábito establecido.",
+      "hypothesis": "Creemos que el dueño de negocio piloto completará la configuración inicial y redirigirá a sus clientes al nuevo canal si el onboarding toma menos de 30 minutos y el sistema resuelve de inmediato el problema de dobles reservas, porque el dolor actual es suficientemente grande para justificar el cambio de hábito.",
+      "metric": "Tiempo hasta primera configuración operativa, y número de negocios piloto que cierran o redirigen el canal de WhatsApp para reservas en los primeros 7 días.",
+      "threshold": "≥ 2 de 3 negocios piloto completan el onboarding en ≤ 30 minutos y redirigen su canal de reservas en los primeros 7 días.",
+      "experiment": "Concierge: acompañar en persona a cada dueño en la configuración inicial del prototipo, cronometrar el tiempo y registrar fricciones. Seguimiento a los 7 días para verificar si el canal de WhatsApp está cerrado o redirigido. Caja de tiempo: 1 semana por negocio piloto. Costo: 0.",
+      "decision": "Si pasa (≥ 2/3 en ≤ 30 min y cierran canal) → el onboarding es viable; construir guía de autoservicio. Si falla → pivotar el flujo de onboarding: simplificar la configuración o descartar el autoservicio y ofrecer setup as a service."
+    },
+    {
+      "id": "H-03",
+      "risk": "medio",
+      "assumption": "El bloqueo automático en tiempo real elimina las dobles reservas incluso cuando dos clientes solicitan el mismo espacio simultáneamente.",
+      "hypothesis": "Creemos que el mecanismo de bloqueo resultará en 0 incidentes de doble reserva durante el piloto en negocios pequeños, porque el volumen de solicitudes simultáneas en este segmento rara vez supera 2-3 por franja horaria.",
+      "metric": "Número de incidentes de doble reserva reportados por los dueños piloto durante 30 días de operación del sistema.",
+      "threshold": "0 incidentes de doble reserva en los 30 días del piloto.",
+      "experiment": "Prototipo en producción: desplegar el sistema en 2-3 negocios reales durante 30 días y registrar si ocurre algún incidente de doble reserva. Corre en paralelo con H-01, sin costo adicional.",
+      "decision": "Si pasa (0 incidentes) → el bloqueo funciona para el volumen actual; no priorizar optimización técnica antes de escalar. Si falla (≥ 1 incidente) → investigar la causa (race condition, latencia, error de interfaz) y corregir antes de escalar a más negocios."
+    }
+  ]
+}
